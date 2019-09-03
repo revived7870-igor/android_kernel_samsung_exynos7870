@@ -98,8 +98,8 @@ config MODEM_IF_QOS
 	depends on LINK_DEVICE_SHMEM
 	default n
 
-config KLAT
-	bool "kernel CLAT"
+config MODEM_PIE_REV
+	bool "Android 9.0 Bootloader/Modem Support"
 	default n
 
 endmenu
