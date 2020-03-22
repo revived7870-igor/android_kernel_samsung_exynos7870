@@ -149,7 +149,7 @@ fw-shipped-$(CONFIG_TOUCHSCREEN_ATMEL_MXT1664) += tsp_atmel/mxt1664t_matisse.fw
 
 TSPFIRMWARE_DIRECTORY = $(srctree)/firmware/tsp_stm
 ifeq ($(shell test -d $(TSPFIRMWARE_DIRECTORY) && echo yes),yes)
-fw-shipped-$(CONFIG_TOUCHSCREEN_FTS7) += tsp_stm/matisse.fw tsp_stm/stm_gtaxl.fw tsp_stm/fts1a096_gtaxl_rev03.fw \
+fw-shipped-srctree$(CONFIG_TOUCHSCREEN_FTS7) += tsp_stm/matisse.fw tsp_stm/stm_gtaxl.fw tsp_stm/fts1a096_gtaxl_rev03.fw \
 					tsp_stm/fts1a096_gtaxl_note.fw
 fw-shipped-$(CONFIG_TOUCHSCREEN_FTS) += tsp_stm/fts8cd56_gtactive2.fw
 fw-shipped-$(CONFIG_TOUCHSCREEN_FTS1BA90A) += tsp_stm/fts1ba90a_gtadv2.fw
@@ -231,7 +231,7 @@ quiet_cmd_fwbin = MK_FW   $@
 		  echo "    .section .rodata"				>>$@;\
 		  echo "    .p2align $${ASM_ALIGN}"			>>$@;\
 		  echo "_fw_$${FWSTR}_bin:"				>>$@;\
-		  echo "    .incbin \"$(2)\""				>>$@;\
+		  echo "    .incbin \"$(srctree)/$(2)\""				>>$@;\
 		  echo "_fw_end:"					>>$@;\
 		  echo "   .section .rodata.str,\"aMS\",$${PROGBITS},1"	>>$@;\
 		  echo "    .p2align $${ASM_ALIGN}"			>>$@;\
