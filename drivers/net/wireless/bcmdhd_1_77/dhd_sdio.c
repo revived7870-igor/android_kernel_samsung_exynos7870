@@ -9954,7 +9954,7 @@ concate_revision_bcm43455(dhd_bus_t *bus, char *fw_path, char *nv_path)
 	chip_rev = bus->sih->chiprev;
 	if (chip_rev == 0x9) {
 		DHD_ERROR(("----- CHIP 43456 -----\n"));
-		strcat(fw_path, "_c5");
+//		strcat(fw_path, "_c5");
 		strcat(nv_path, "_c5");
 	} else {
 		DHD_ERROR(("----- CHIP 43455  -----\n"));
